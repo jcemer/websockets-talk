@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+</head>
+<body>
+    <script src="engine.io.js"></script>
+    <script>
+        var socket = new eio.Socket();
+
+        socket.on('open', function () {
+            var i = 0;
+            setInterval(function () {
+                socket.send(i++);
+            }, 1000);
+
+            socket.on('message', function (data) {
+                document.writeln('<p>' + data + '</p>');
+            });
+        });
+    </script>
+</body>
+</html>

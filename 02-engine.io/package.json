@@ -1,0 +1,13 @@
+{
+  "name": "02-engine-io-websockets-talk",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "Jean Carlo Emer",
+  "license": "MIT",
+  "dependencies": {
+    "engine.io": "~0.7.12",
+    "express": "~3.4.4"
+  }
+}

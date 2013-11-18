@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+</head>
+<body>
+    <script>
+        var ws = new WebSocket('ws://localhost:8001');
+
+        ws.onopen = function () {
+            var i = 0;
+            setInterval(function () {
+                ws.send(i++);
+            }, 1000);
+
+            ws.onmessage = function (event) {
+                document.writeln('<p>' + event.data + '</p>');
+            }
+        };
+    </script>
+</body>
+</html>

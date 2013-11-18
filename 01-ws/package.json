@@ -1,0 +1,12 @@
+{
+  "name": "01-ws-websockets-talk",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ws": "~0.4.31"
+  },
+  "devDependencies": {},
+  "author": "Jean Carlo Emer",
+  "license": "MIT"
+}

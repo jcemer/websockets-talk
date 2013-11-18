@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = new io.connect();
+
+        socket.on('connect', function () {
+            var i = 0;
+            setInterval(function () {
+                socket.json.send({num: i++ });
+            }, 1000);
+
+            socket.on('welcome', function (data) {
+                document.writeln('<h1>' + data + '</h1>');
+            });
+
+            socket.on('response', function (data) {
+                document.writeln('<p>' + data + '</p>');
+            });
+        });
+    </script>
+</body>
+</html>
